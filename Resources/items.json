@@ -1,0 +1,33 @@
+{
+    "torche": {
+      "id": "torche",
+      "name": "Torche",
+      "description": "Utile pour voir dans le noir."
+    },
+    "cle": {
+      "id": "cle",
+      "name": "Clé en fer",
+      "description": "Permet d’ouvrir une salle verrouillée."
+    },
+    "fragment_carte": {
+      "id": "fragment_carte",
+      "name": "Fragment de carte",
+      "description": "Un morceau d’une ancienne carte du donjon."
+    },
+    "amulette": {
+      "id": "amulette",
+      "name": "Amulette protectrice",
+      "description": "Protège contre les créatures magiques."
+    },
+    "artefact": {
+      "id": "artefact",
+      "name": "Artefact d’Argath",
+      "description": "L’objet légendaire que vous êtes venu chercher."
+    },
+    "livre": {
+      "id": "livre",
+      "name": "Livre ancien",
+      "description": "Un livre poussiéreux rempli de secrets oubliés."
+    }
+
+  }
