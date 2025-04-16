@@ -1,0 +1,8 @@
+{
+    "name": "Swift",
+    "image": "swift:latest",
+    "workspaceFolder": "/app",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/app,type=bind"
+    ]
+}
