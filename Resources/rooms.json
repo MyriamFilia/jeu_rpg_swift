@@ -9,9 +9,13 @@
       "items": [
         "torche"
       ],
-      "puzzles": [],
-      "monsters": []
+      "puzzles": null,
+      "monsters": [],
+      "characters": [],
+      "isLocked": false
     },
+
+
     "statues": {
       "id": "statues",
       "name": "Salle des Statues",
@@ -21,11 +25,13 @@
         "nord": "verrouillee"
       },
       "items": [],
-      "puzzles": [
-        "puzzle1"
-      ],
-      "monsters": []
+      "puzzles": "puzzle1",
+      "monsters": [],
+      "characters": [],
+      "isLocked": false
     },
+
+
     "verrouillee": {
       "id": "verrouillee",
       "name": "Salle Verrouillée",
@@ -35,9 +41,13 @@
         "bas": "cavernes"
       },
       "items": [],
-      "puzzles": [],
-      "monsters": []
+      "puzzles": null,
+      "monsters": [],
+      "characters": [],
+      "isLocked": true
     },
+
+
     "cavernes": {
       "id": "cavernes",
       "name": "Cavernes Obscures",
@@ -48,9 +58,13 @@
       "items": [
         "fragment_carte"
       ],
-      "puzzles": [],
-      "monsters": []
+      "puzzles": null,
+      "monsters": [],
+      "characters": [],
+      "isLocked": false
     },
+
+
     "echo": {
       "id": "echo",
       "name": "Salle de l’Écho",
@@ -60,11 +74,13 @@
         "nord": "bibliotheque"
       },
       "items": [],
-      "puzzles": [
-        "puzzle2"
-      ],
-      "monsters": []
+      "puzzles": "puzzle2",
+      "monsters": [],
+      "characters": [],
+      "isLocked": false
     },
+
+
     "bibliotheque": {
       "id": "bibliotheque",
       "name": "Bibliothèque Oubliée",
@@ -74,9 +90,13 @@
         "nord": "sanctuaire"
       },
       "items": [],
-      "puzzles": [],
-      "monsters": []
+      "puzzles": null,
+      "monsters": [],
+      "characters": [],
+      "isLocked": false
     },
+
+
     "sanctuaire": {
       "id": "sanctuaire",
       "name": "Sanctuaire Brisé",
@@ -88,11 +108,15 @@
       "items": [
         "artefact"
       ],
-      "puzzles": [],
+      "puzzles": null,
       "monsters": [
         "golem"
-      ]
+      ],
+      "characters": [],
+      "isLocked": false
     },
+
+
     "sortie": {
       "id": "sortie",
       "name": "Sortie Scellée",
@@ -101,7 +125,9 @@
         "sud": "sanctuaire"
       },
       "items": [],
-      "puzzles": [],
-      "monsters": []
+      "puzzles": null,
+      "monsters": [],
+      "characters": [],
+      "isLocked": true
     }
 }

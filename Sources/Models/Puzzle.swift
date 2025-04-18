@@ -5,7 +5,7 @@ struct Puzzle: Codable, Identifiable, Hashable {
     let name: String
     let description: String
     let solution: String
-    let isSolved: Bool
+    var isSolved: Bool
     let reward: String
     let roomId: String
 }
