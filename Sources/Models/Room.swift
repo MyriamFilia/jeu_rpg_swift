@@ -5,7 +5,9 @@ struct Room: Codable, Identifiable, Hashable {
     let name: String
     let description: String
     let direction: [String : String]
-    let items : [String]
-    let puzzles: [String]
+    var items : [String]
+    let puzzles: String?
     let monsters: [String]
+    var characters: [String] = []
+    let isLocked: Bool
 }

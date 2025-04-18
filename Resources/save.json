@@ -1,0 +1,12 @@
+{
+  "inventory" : [
+    "cle",
+    "fragment_carte"
+  ],
+  "solvedPuzzles" : [
+    "puzzle1"
+  ],
+  "score" : 10,
+  "playerPosition" : "cavernes",
+  "playerName" : "Filia"
+}
