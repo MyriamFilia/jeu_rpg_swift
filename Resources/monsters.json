@@ -15,29 +15,5 @@
       "attackPower": 10,
       "defense": 5,
       "health": 30
-    },
-    "monstre_ombre": {
-      "id": "ombre",
-      "name": "Monstre de l'ombre",
-      "description": "Une créature insaisissable qui se nourrit de la peur.",
-      "attackPower": 12,
-      "defense": 8,
-      "health": 40
-    },
-    "monstre_vent": {
-      "id": "vent",
-      "name": "Monstre du vent",
-      "description": "Une créature rapide et insaisissable.",
-      "attackPower": 14,
-      "defense": 6,
-      "health": 35
-    },
-    "monstre_feu": {
-      "id": "feu",
-      "name": "Monstre de feu",
-      "description": "Une créature ardente qui brûle tout sur son passage.",
-      "attackPower": 18,
-      "defense": 4,
-      "health": 45
     }
   }

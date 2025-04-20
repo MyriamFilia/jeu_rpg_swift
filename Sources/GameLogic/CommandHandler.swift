@@ -1,115 +1,134 @@
 import Foundation
 
 class CommandHandler {
-    
-    //Propriétés
+    // MARK: - Propriétés
     var gameManager: GameManager
-    var player: Player?
-    
-    //Initialisation
-    init(gameManager: GameManager) {
+    var playerId: String?
+
+    // MARK: - Initialisation
+    init(gameManager: GameManager, playerId: String?) {
         self.gameManager = gameManager
-        self.player = gameManager.player
+        self.playerId = playerId
     }
-    
-    //Méthodes
+
+    // MARK: - Méthodes principales de gestion de commandes
     func handleCommand(_ command: String) {
         let commandComponents = command.split(separator: " ")
         guard let action = commandComponents.first else { return }
-        
+
+        guard let playerId = playerId else {
+            print("Erreur : Aucun joueur actif.")
+            return
+        }
+
         switch action {
-            case "regarder":
-                afficherSalleActuelle()
-                
-            case "aller":
-                if commandComponents.count > 1 {
-                    let direction = commandComponents[1].lowercased()
-                    aller(direction)
-                } else {
-                    print("Erreur : Direction manquante. Utilisez 'aller [direction]'.")
-                }
-                
-            case "prendre":
-                if commandComponents.count > 1 {
-                    let item = commandComponents[1].lowercased()
-                    gameManager.addItemToInventory(item)
-                } else {
-                    print("Erreur : Objet manquant. Utilisez 'prendre [objet]'.")
-                }
-                
-            case "utiliser":
-                if commandComponents.count > 1 {
-                    let item = commandComponents[1].lowercased()
-                    gameManager.useItem(item)
-                } else {
-                    print("Erreur : Objet manquant. Utilisez 'utiliser [objet]'.")
-                }
-                
-            case "parler":
-                if commandComponents.count > 2, commandComponents[1] == "à" {
-                    let characterName = commandComponents[2].lowercased()
-                    parlerA(characterName)
-                } else {
-                    print("Erreur : Personnage manquant. Utilisez 'parler à [personnage]'.")
-                }
-                
-            case "résoudre":
-                let restOfCommand = commandComponents.dropFirst().joined(separator: " ")
-                resoudreEnigme(restOfCommand)
-                
-            case "aide", "?":
-                afficherAide()
+        case "regarder":
+            afficherSalleActuelle()
 
-            case "inventaire":
-                afficherInventaire()
+        case "aller":
+            if commandComponents.count > 1 {
+                let direction = commandComponents[1].lowercased()
+                aller(direction)
+            } else {
+                print("Erreur : Direction manquante. Utilisez 'aller [direction]'.")
+            }
 
-            case  "sauvegarder":
-                gameManager.saveGame()
+        case "prendre":
+            if commandComponents.count > 1 {
+                let item = commandComponents[1].lowercased()
+                gameManager.addItemToInventory(item, playerId: playerId)
+            } else {
+                print("Erreur : Objet manquant. Utilisez 'prendre [objet]'.")
+            }
 
-            case "quitter":
-                print("Merci d'avoir joué ! À bientôt.")
-                exit(0)
-                
-            default:
-                print("Commande invalide. Tapez 'aide' ou '?' pour voir la liste des commandes.")
+        case "utiliser":
+            if commandComponents.count > 1 {
+                let item = commandComponents[1].lowercased()
+                gameManager.useItem(item, playerId: playerId)
+            } else {
+                print("Erreur : Objet manquant. Utilisez 'utiliser [objet]'.")
+            }
+
+        case "parler":
+            if commandComponents.count > 2, commandComponents[1] == "à" {
+                let characterName = commandComponents[2].lowercased()
+                parlerA(characterName)
+            } else {
+                print("Erreur : Personnage manquant. Utilisez 'parler à [personnage]'.")
+            }
+
+        case "résoudre":
+            let restOfCommand = commandComponents.dropFirst().joined(separator: " ")
+            resoudreEnigme(restOfCommand)
+
+        case "combattre":
+            if commandComponents.count > 1 {
+                let monsterId = commandComponents[1].lowercased()
+                gameManager.fightMonster(monsterId: monsterId, playerId: playerId)
+            } else {
+                print("Erreur : Monstre manquant. Utilisez 'combattre [monstre]'.")
+            }
+
+        case "missions":
+            gameManager.displayMissions()
+
+        case "aide", "?":
+            afficherAide()
+
+        case "inventaire":
+            afficherInventaire()
+
+        case "sauvegarder":
+            gameManager.saveGame(playerId: playerId)
+
+        case "quitter":
+            demanderSauvegarde()
+
+        default:
+            print("Commande invalide. Tapez 'aide' ou '?' pour voir la liste des commandes.")
         }
     }
-    
-    // Commande "regarder"
+
+    // MARK: - Commandes spécifiques
     func afficherSalleActuelle() {
-        gameManager.afficherSalleActuelle()
+        guard let playerId = playerId, let player = gameManager.players[playerId] else {
+            print("Erreur : Aucun joueur actif.")
+            return
+        }
+        gameManager.afficherSalleActuelle(for: player)
     }
-    
-    // Commande "aller"
+
     func aller(_ direction: String) {
-        gameManager.move(to: direction)
+        guard let playerId = playerId else {
+            print("Erreur : Aucun joueur actif.")
+            return
+        }
+        gameManager.move(playerId: playerId, to: direction)
     }
-    
-    // Commande "prendre"
+
     func prendreItem(_ item: String) {
         print("Vous avez pris l'objet : \(item)")
     }
-    
-    // Commande "utiliser"
+
     func utiliserItem(_ item: String) {
         print("Vous utilisez l'objet : \(item)")
     }
-    
-    // Commande "parler"
+
     func parlerA(_ characterName: String) {
         print("Vous parlez à \(characterName).")
     }
-    
-    // Commande "résoudre"
-    func resoudreEnigme(_ input: String) {
 
+    func resoudreEnigme(_ input: String) {
+        guard let playerId = playerId, let player = gameManager.players[playerId] else {
+            print("Erreur : Aucun joueur actif.")
+            return
+        }
         let components = input.split(separator: " ").map { String($0) }
-        
-        if components.count == 0 {
-            guard let player = gameManager.player,
-                let currentRoom = gameManager.rooms[player.currentRoomId],
-                let puzzleId = currentRoom.puzzles,
-                let puzzle = gameManager.puzzles[puzzleId], !puzzle.isSolved else {
+
+        if components.isEmpty {
+            guard let currentRoom = gameManager.rooms[player.currentRoomId],
+                  let puzzleId = currentRoom.puzzles,
+                  let puzzle = gameManager.puzzles[puzzleId], !puzzle.isSolved else {
                 print("Il n'y a pas d'énigme à résoudre ici.")
                 return
             }
@@ -117,17 +136,18 @@ class CommandHandler {
             print("Voici l'énigme : \(puzzle.description)")
             print("Quelle est votre réponse ?")
             if let userAnswer = readLine()?.trimmingCharacters(in: .whitespacesAndNewlines) {
-                gameManager.resolvePuzzle(puzzleId: puzzleId, solution: userAnswer)
+                gameManager.resolvePuzzle(puzzleId: puzzleId, solution: userAnswer, playerId: playerId)
             } else {
                 print("Aucune réponse donnée.")
             }
-            return
         }
     }
-    
-    // Commande "inventaire"
+
     func afficherInventaire() {
-      guard let player = gameManager.player else { return }
+        guard let playerId = playerId, let player = gameManager.players[playerId] else {
+            print("Erreur : Aucun joueur actif.")
+            return
+        }
 
         if player.inventory.isEmpty {
             print("Votre inventaire est vide.")
@@ -143,8 +163,7 @@ class CommandHandler {
         }
     }
 
-    
-    // Commande "aide"
+    // MARK: - Commande "aide"
     func afficherAide() {
         print("""
         Commandes disponibles :
@@ -153,9 +172,36 @@ class CommandHandler {
         - prendre [objet] : Prendre un objet (ex: prendre clé).
         - utiliser [objet] : Utiliser un objet (ex: utiliser torche).
         - parler à [personnage] : Parler à un personnage (ex: parler à marchand).
-        - résoudre [énigme] : Résoudre une énigme.
+        - résoudre : Résoudre une énigme dans la salle actuelle.
+        - combattre [monstre] : Combattre un monstre (ex: combattre golem).
+        - missions : Afficher les missions et leur progression.
+        - inventaire : Afficher les objets dans votre inventaire.
+        - sauvegarder : Sauvegarder votre progression.
+        - quitter : Quitter le jeu.
         - aide / ? : Afficher cette aide.
         """)
     }
 
+    // MARK: - Demander si l'utilisateur veut sauvegarder avant de quitter
+    func demanderSauvegarde() {
+        print("Voulez-vous sauvegarder avant de quitter ? (oui / non)")
+        if let response = readLine()?.lowercased() {
+            switch response {
+            case "oui":
+                if let playerId = playerId {
+                    gameManager.saveGame(playerId: playerId)
+                    print("Partie sauvegardée. Merci d'avoir joué ! À bientôt.")
+                } else {
+                    print("Erreur : Aucun joueur actif pour sauvegarder.")
+                }
+                exit(0)
+            case "non":
+                print("Merci d'avoir joué ! À bientôt.")
+                exit(0)
+            default:
+                print("Réponse invalide. Le jeu se termine sans sauvegarde.")
+                exit(0)
+            }
+        }
+    }
 }
