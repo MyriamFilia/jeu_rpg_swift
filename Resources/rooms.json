@@ -1,133 +1,119 @@
 {
-    "entree": {
-      "id": "entree",
-      "name": "Entrée du Donjon",
-      "description": "Une vieille porte grince dans le vent. Une torche est accrochée au mur.",
-      "direction": {
-        "nord": "statues"
-      },
-      "items": [
-        "torche"
-      ],
-      "puzzles": null,
-      "monsters": [],
-      "characters": [],
-      "isLocked": false
+  "entree": {
+    "id": "entree",
+    "name": "Entrée du Donjon",
+    "description": "Une vieille porte grince dans le vent. Une torche est accrochée au mur.",
+    "direction": {
+      "nord": "statues"
     },
-
-
-    "statues": {
-      "id": "statues",
-      "name": "Salle des Statues",
-      "description": "Des statues de pierre vous observent. Un murmure mystérieux résonne.",
-      "direction": {
-        "sud": "entree",
-        "nord": "verrouillee"
-      },
-      "items": [],
-      "puzzles": "puzzle1",
-      "monsters": [],
-      "characters": [],
-      "isLocked": false
+    "items": [
+      "torche"
+    ],
+    "puzzles": "puzzle6",
+    "monsters": [],
+    "characters": [],
+    "isLocked": false
+  },
+  "statues": {
+    "id": "statues",
+    "name": "Salle des Statues",
+    "description": "Des statues de pierre vous observent. Un murmure mystérieux résonne.",
+    "direction": {
+      "sud": "entree",
+      "nord": "verrouillee"
     },
-
-
-    "verrouillee": {
-      "id": "verrouillee",
-      "name": "Salle Verrouillée",
-      "description": "Une salle sombre avec une trappe au sol. Une clé semble nécessaire pour entrer.",
-      "direction": {
-        "sud": "statues",
-        "bas": "cavernes"
-      },
-      "items": [],
-      "puzzles": null,
-      "monsters": [],
-      "characters": [],
-      "isLocked": true
+    "items": [],
+    "puzzles": "puzzle1",
+    "monsters": [],
+    "characters": [],
+    "isLocked": false
+  },
+  "verrouillee": {
+    "id": "verrouillee",
+    "name": "Salle Verrouillée",
+    "description": "Une salle sombre avec une trappe au sol. Une clé semble nécessaire pour entrer.",
+    "direction": {
+      "sud": "statues",
+      "bas": "cavernes"
     },
-
-
-    "cavernes": {
-      "id": "cavernes",
-      "name": "Cavernes Obscures",
-      "description": "Un labyrinthe souterrain plongé dans le noir.",
-      "direction": {
-        "ouest": "echo"
-      },
-      "items": [
-        "fragment_carte"
-      ],
-      "puzzles": null,
-      "monsters": [],
-      "characters": [],
-      "isLocked": false
+    "items": [],
+    "puzzles": null,
+    "monsters": [],
+    "characters": [],
+    "isLocked": true
+  },
+  "cavernes": {
+    "id": "cavernes",
+    "name": "Cavernes Obscures",
+    "description": "Un labyrinthe souterrain plongé dans le noir.",
+    "direction": {
+      "ouest": "echo"
     },
-
-
-    "echo": {
-      "id": "echo",
-      "name": "Salle de l’Écho",
-      "description": "Un son étrange résonne. Tu sens qu’un piège sonore t’attend.",
-      "direction": {
-        "est": "cavernes",
-        "nord": "bibliotheque"
-      },
-      "items": [],
-      "puzzles": "puzzle2",
-      "monsters": [],
-      "characters": [],
-      "isLocked": false
+    "items": [
+      "fragment_carte"
+    ],
+    "puzzles": "puzzle5",
+    "monsters": [],
+    "characters": [],
+    "isLocked": false
+  },
+  "echo": {
+    "id": "echo",
+    "name": "Salle de l’Écho",
+    "description": "Un son étrange résonne. Tu sens qu’un piège sonore t’attend.",
+    "direction": {
+      "est": "cavernes",
+      "nord": "bibliotheque"
     },
-
-
-    "bibliotheque": {
-      "id": "bibliotheque",
-      "name": "Bibliothèque Oubliée",
-      "description": "Des rayonnages effondrés, des livres anciens, et une présence spectrale.",
-      "direction": {
-        "sud": "echo",
-        "nord": "sanctuaire"
-      },
-      "items": [],
-      "puzzles": null,
-      "monsters": [],
-      "characters": [],
-      "isLocked": false
+    "items": [],
+    "puzzles": "puzzle2",
+    "monsters": [],
+    "characters": [],
+    "isLocked": false
+  },
+  "bibliotheque": {
+    "id": "bibliotheque",
+    "name": "Bibliothèque Oubliée",
+    "description": "Des rayonnages effondrés, des livres anciens, et une présence spectrale.",
+    "direction": {
+      "sud": "echo",
+      "nord": "sanctuaire"
     },
-
-
-    "sanctuaire": {
-      "id": "sanctuaire",
-      "name": "Sanctuaire Brisé",
-      "description": "Un autel en ruine et un golem de pierre figé.",
-      "direction": {
-        "sud": "bibliotheque",
-        "nord": "sortie"
-      },
-      "items": [
-        "artefact"
-      ],
-      "puzzles": null,
-      "monsters": [
-        "golem"
-      ],
-      "characters": [],
-      "isLocked": false
+    "items": [],
+    "puzzles": "puzzle3",
+    "monsters": [],
+    "characters": [],
+    "isLocked": false
+  },
+  "sanctuaire": {
+    "id": "sanctuaire",
+    "name": "Sanctuaire Brisé",
+    "description": "Un autel en ruine et un golem de pierre figé.",
+    "direction": {
+      "sud": "bibliotheque",
+      "nord": "sortie"
     },
-
-
-    "sortie": {
-      "id": "sortie",
-      "name": "Sortie Scellée",
-      "description": "Une porte magique bloquée. Il faut l’artefact pour sortir.",
-      "direction": {
-        "sud": "sanctuaire"
-      },
-      "items": [],
-      "puzzles": null,
-      "monsters": [],
-      "characters": [],
-      "isLocked": true
-    }
+    "items": [
+      "artefact"
+    ],
+    "puzzles": "puzzle4",
+    "monsters": [
+      "golem"
+    ],
+    "characters": [],
+    "isLocked": false
+  },
+  "sortie": {
+    "id": "sortie",
+    "name": "Sortie Scellée",
+    "description": "Une porte magique bloquée. Il faut l’artefact pour sortir.",
+    "direction": {
+      "sud": "sanctuaire"
+    },
+    "items": [],
+    "puzzles": null,
+    "monsters": [],
+    "characters": [],
+    "isLocked": true
+  }
 }

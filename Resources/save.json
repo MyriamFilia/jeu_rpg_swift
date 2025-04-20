@@ -1,12 +1,1 @@
-{
-  "inventory" : [
-    "cle",
-    "fragment_carte"
-  ],
-  "solvedPuzzles" : [
-    "puzzle1"
-  ],
-  "score" : 10,
-  "playerPosition" : "cavernes",
-  "playerName" : "Filia"
-}
+[{"playerId":"6B9A9C55-749B-4F0D-9071-A0839ECAB75B","solvedPuzzles":[],"playerPosition":"entree","playerName":"Filia","inventory":[],"score":0,"completedChapters":[]}]
