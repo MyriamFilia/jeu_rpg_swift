@@ -1,1 +1,169 @@
-[{"playerId":"6B9A9C55-749B-4F0D-9071-A0839ECAB75B","solvedPuzzles":[],"playerPosition":"entree","playerName":"Filia","inventory":[],"score":0,"completedChapters":[]}]
+[
+  {
+    "puzzleStates" : [
+      {
+        "description" : "Je chasse l’ombre, mais je ne vis que par le feu. Que suis-je ?",
+        "id" : "puzzle4",
+        "isSolved" : true,
+        "roomId" : "entree",
+        "solution" : "lumière",
+        "reward" : "cle",
+        "name" : "Énigme de la Torche"
+      },
+      {
+        "description" : "Je contiens tout le savoir, mais je reste muet. Que suis-je ?",
+        "id" : "puzzle3",
+        "isSolved" : true,
+        "roomId" : "bibliotheque",
+        "solution" : "livre",
+        "reward" : "connaissance",
+        "name" : "Énigme de la Bibliothèque"
+      },
+      {
+        "description" : "Je suis plus léger que l'air, mais impossible à attraper. Que suis-je ?",
+        "id" : "puzzle1",
+        "isSolved" : true,
+        "roomId" : "statues",
+        "solution" : "souffle",
+        "reward" : "fragment_1",
+        "name" : "Énigme des Statues"
+      },
+      {
+        "description" : "Répète ce que je dis et je meurs. Qui suis-je ?",
+        "id" : "puzzle2",
+        "isSolved" : true,
+        "roomId" : "echo",
+        "solution" : "écho",
+        "startTime" : 0,
+        "timeLimit" : 2,
+        "reward" : "fragment_2",
+        "name" : "Énigme de l'Écho"
+      }
+    ],
+    "inventory" : [
+      "torche",
+      "fragment_carte",
+      "amulette",
+      "livre"
+    ],
+    "score" : 420,
+    "receivedHints" : [
+      "Prends la torche, utilise-la pour révéler l’énigme, et résous-la pour obtenir la clé.",
+      "Les objets du donjon sont la clé pour ouvrir les chemins. Cherche une torche, une clé, et une carte.",
+      "Chaque objet a un rôle. La clé ouvre un chemin crucial.",
+      "Prends le fragment de carte et utilise-le pour révéler un chemin caché.",
+      "Ce qui est plus léger que l’air n’a pas de substance physique.",
+      "Prends le livre dans la bibliothèque, utilise-le pour révéler l’énigme, et résous-la pour avancer.",
+      "Utilise l’amulette pour vaincre le golem et obtenir le dernier fragment.",
+      "Utilise l’Œil d’Argath pour ouvrir la sortie, puis choisis : garder ou détruire."
+    ],
+    "playerPosition" : "sortie",
+    "visitedRooms" : [
+      "echo",
+      "cavernes",
+      "entree",
+      "bibliotheque",
+      "sanctuaire",
+      "statues"
+    ],
+    "playerName" : "Filia",
+    "collectedItems" : [
+      "torche",
+      "cle",
+      "fragment_carte",
+      "amulette",
+      "fragment_2",
+      "fragment_1",
+      "livre",
+      "connaissance",
+      "fragment_3",
+      "artefact"
+    ],
+    "solvedPuzzles" : [
+      "puzzle4",
+      "puzzle3",
+      "puzzle1",
+      "puzzle2"
+    ],
+    "playerId" : "39F70F9F-F3F4-43F3-8970-158EC911EF15",
+    "completedChapters" : [
+      "chap1",
+      "chap2",
+      "chap3",
+      "chap4",
+      "chap5",
+      "chap6",
+      "chap7",
+      "chap8",
+      "chap9"
+    ],
+    "gameTime" : 2
+  },
+  {
+    "puzzleStates" : [
+      {
+        "solution" : "souffle",
+        "name" : "Énigme des Statues",
+        "id" : "puzzle1",
+        "isSolved" : false,
+        "reward" : "fragment_1",
+        "roomId" : "statues",
+        "description" : "Je suis plus léger que l'air, mais impossible à attraper. Que suis-je ?"
+      },
+      {
+        "solution" : "livre",
+        "name" : "Énigme de la Bibliothèque",
+        "id" : "puzzle3",
+        "isSolved" : false,
+        "reward" : "connaissance",
+        "roomId" : "bibliotheque",
+        "description" : "Je contiens tout le savoir, mais je reste muet. Que suis-je ?"
+      },
+      {
+        "solution" : "écho",
+        "name" : "Énigme de l'Écho",
+        "id" : "puzzle2",
+        "isSolved" : false,
+        "timeLimit" : 2,
+        "reward" : "fragment_2",
+        "roomId" : "echo",
+        "description" : "Répète ce que je dis et je meurs. Qui suis-je ?"
+      },
+      {
+        "solution" : "lumière",
+        "name" : "Énigme de la Torche",
+        "id" : "puzzle4",
+        "isSolved" : false,
+        "reward" : "cle",
+        "roomId" : "entree",
+        "description" : "Je chasse l’ombre, mais je ne vis que par le feu. Que suis-je ?"
+      }
+    ],
+    "inventory" : [
+
+    ],
+    "score" : 0,
+    "receivedHints" : [
+
+    ],
+    "playerPosition" : "entree",
+    "visitedRooms" : [
+      "entree"
+    ],
+    "playerName" : "Nola",
+    "collectedItems" : [
+
+    ],
+    "solvedPuzzles" : [
+      "puzzle1",
+      "puzzle3",
+      "puzzle2",
+      "puzzle4"
+    ],
+    "playerId" : "6C1E0D85-0DBA-410E-95BC-19E48FC73156",
+    "completedChapters" : [
+
+    ],
+    "gameTime" : 0
+  }
+]

@@ -5,22 +5,22 @@ class Player: Codable, Identifiable, Hashable {
     let name: String
     let description: String
     var inventory: [String]
+    var collectedItems: [String]
     var currentRoomId: String
-    var attackPower: Int
-    var defense: Int
-    var health: Int
     var score: Int
+    var visitedRooms: Set<String>
+    var receivedHints: [String]
 
     init(name: String, startingRoomId: String) {
         self.id = UUID().uuidString
         self.name = name
         self.description = "Brave Aventurier"
         self.inventory = []
+        self.collectedItems = []
         self.currentRoomId = startingRoomId
-        self.attackPower = 10
-        self.defense = 5
-        self.health = 100
         self.score = 0
+        self.visitedRooms = [startingRoomId]
+        self.receivedHints = []
     }
 
     init(name: String, startingRoomId: String, id: String) {
@@ -28,29 +28,41 @@ class Player: Codable, Identifiable, Hashable {
         self.name = name
         self.description = "Brave Aventurier"
         self.inventory = []
+        self.collectedItems = []
         self.currentRoomId = startingRoomId
-        self.attackPower = 10
-        self.defense = 5
-        self.health = 100
         self.score = 0
+        self.visitedRooms = [startingRoomId]
+        self.receivedHints = []
     }
 
-    // Implémentation de la méthode hash(into:) pour le protocole Hashable
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 
-    // Implémentation de la méthode == pour le protocole Equatable
     static func == (lhs: Player, rhs: Player) -> Bool {
         return lhs.id == rhs.id
     }
 
-    // Fonction pour ajouter un objet à l'inventaire
     func addItemToInventory(_ item: String) {
-        inventory.append(item)
+        if !inventory.contains(item) {
+            inventory.append(item)
+        }
+        if !collectedItems.contains(item) {
+            collectedItems.append(item)
+        }
     }
 
     func addScore(_ points: Int) {
         score += points
+    }
+
+    func visitRoom(_ roomId: String) {
+        visitedRooms.insert(roomId)
+    }
+
+    func receiveHint(_ hint: String) {
+        if !receivedHints.contains(hint) {
+            receivedHints.append(hint)
+        }
     }
 }
