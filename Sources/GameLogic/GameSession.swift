@@ -7,7 +7,7 @@ class GameSession {
 
     init(gameManager: GameManager) {
         self.gameManager = gameManager
-        self.commandHandler = CommandHandler(gameManager: gameManager) // Supprimé playerId
+        self.commandHandler = CommandHandler(gameManager: gameManager) 
     }
 
     func start() {
@@ -35,7 +35,7 @@ class GameSession {
                         do {
                             let data = try Data(contentsOf: url)
                             if data.isEmpty {
-                                print("Le fichier de sauvegarde est vide. Aucune sauvegarde trouvée.")
+                                print("Aucune sauvegarde trouvée.")
                             } else {
                                 gameSaves = try JSONDecoder().decode([GameSave].self, from: data)
                             }
@@ -98,33 +98,22 @@ class GameSession {
         while true {
             print("\nQue voulez-vous faire ?")
             if let userInput = readLine()?.lowercased() {
-                if userInput == "menu"  {
-                    if let playerId = activePlayerId {
-                        gameManager.returnToMenu(playerId: playerId)
-                        activePlayerId = nil // Réinitialiser l'ID du joueur actif
-                        start() // Relancer le menu principal
-                        break // Sortir de la boucle de jeu
-                    } else {
-                        print("Erreur : Aucun joueur actif.")
+                switch userInput {
+                    case "menu", "quitter":
+                        if let playerId = activePlayerId {
+                            demanderSauvegarde()
+                            gameManager.returnToMenu(playerId: playerId)
+                            activePlayerId = nil // Réinitialiser l'ID du joueur actif
+                            start() // Relancer le menu principal
+                            break // Sortir de la boucle de jeu
+                        } else {
+                            print("Erreur : Aucun joueur actif.")
+                        }
+                    default:
+                        commandHandler.handleCommand(userInput)
                     }
-                } else {
-                    commandHandler.handleCommand(userInput)
-                    //afficherEtatJoueur()
-                }
             }
         }
-    }
-
-    private func afficherEtatJoueur() {
-        guard let playerId = activePlayerId, let player = gameManager.players[playerId] else {
-            print("Erreur : Aucun joueur actif.")
-            return
-        }
-        print("\n--- État actuel du joueur ---")
-        print("Position : \(gameManager.rooms[player.currentRoomId]?.name ?? "Inconnue")")
-        print("Score : \(player.score)")
-        print("Inventaire : \(player.inventory.isEmpty ? "Vide" : player.inventory.joined(separator: ", "))")
-        print("-----------------------------")
     }
 
     private func quitterJeu() {
@@ -146,4 +135,19 @@ class GameSession {
         }
         exit(0)
     }
+
+    func demanderSauvegarde() {
+        guard let playerId = activePlayerId else {
+            print("Erreur : Aucun joueur actif.")
+            return
+        }
+        print("Voulez-vous sauvegarder avant de retourner au menu principal ? (oui/non)")
+        if let response = readLine()?.lowercased(), response == "oui" {
+            gameManager.saveGame(playerId: playerId)
+            print("Jeu sauvegardé. Retour au menu principal...")
+        } else {
+            print("Retour au menu principal...")
+        }
+    }
+
 }

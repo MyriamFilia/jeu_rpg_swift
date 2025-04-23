@@ -91,9 +91,7 @@ class CommandHandler {
             }
         case "sauvegarder":
             gameManager.saveGame(playerId: playerId)
-        case "quitter":
-            demanderSauvegarde()
-        case "menu":
+        case "menu" , "quitter":
             print("Retour au menu principal...")
         case "aide", "?":
             afficherAide()
@@ -252,22 +250,10 @@ class CommandHandler {
         - attendre : Faire avancer le temps d’un tour.
         - afficher carte : Afficher la carte du donjon.
         - sauvegarder : Sauvegarder la partie.
-        - quitter : Quitter le jeu (avec option de sauvegarde).
-        - aide : Afficher cette aide.
+        - menu ou quitter : Quitter le jeu (Retourner au menu principal).
+        - aide ou ? : Afficher cette aide.
         """)
     }
 
-    func demanderSauvegarde() {
-        guard let playerId = playerId else {
-            print("Erreur : Aucun joueur actif.")
-            return
-        }
-        print("Voulez-vous sauvegarder avant de retourner au menu principal ? (oui/non)")
-        if let response = readLine()?.lowercased(), response == "oui" {
-            gameManager.saveGame(playerId: playerId)
-            print("Jeu sauvegardé. Retour au menu principal...")
-        } else {
-            print("Retour au menu principal...")
-        }
-    }
+    
 }

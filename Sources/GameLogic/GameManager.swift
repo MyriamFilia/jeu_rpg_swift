@@ -52,7 +52,7 @@ class GameManager {
 
         for line in introLines {
             print(line)
-            Thread.sleep(forTimeInterval: 0.08)
+            Thread.sleep(forTimeInterval: 0.5)
         }
     }
 
@@ -419,7 +419,6 @@ class GameManager {
         }
     }
 
-    // MARK: - Combiner des objets
     func combineItems(_ itemIds: [String], playerId: String) {
         guard let player = players[playerId] else {
             print("Erreur : Joueur non trouvé.")

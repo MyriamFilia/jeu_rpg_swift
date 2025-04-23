@@ -2,62 +2,45 @@
   {
     "puzzleStates" : [
       {
+        "isSolved" : true,
+        "solution" : "lumière",
         "description" : "Je chasse l’ombre, mais je ne vis que par le feu. Que suis-je ?",
         "id" : "puzzle4",
-        "isSolved" : true,
-        "roomId" : "entree",
-        "solution" : "lumière",
+        "name" : "Énigme de la Torche",
         "reward" : "cle",
-        "name" : "Énigme de la Torche"
+        "roomId" : "entree"
       },
       {
+        "isSolved" : true,
+        "solution" : "livre",
         "description" : "Je contiens tout le savoir, mais je reste muet. Que suis-je ?",
         "id" : "puzzle3",
-        "isSolved" : true,
-        "roomId" : "bibliotheque",
-        "solution" : "livre",
+        "name" : "Énigme de la Bibliothèque",
         "reward" : "connaissance",
-        "name" : "Énigme de la Bibliothèque"
+        "roomId" : "bibliotheque"
       },
       {
+        "isSolved" : true,
+        "solution" : "souffle",
         "description" : "Je suis plus léger que l'air, mais impossible à attraper. Que suis-je ?",
         "id" : "puzzle1",
-        "isSolved" : true,
-        "roomId" : "statues",
-        "solution" : "souffle",
+        "name" : "Énigme des Statues",
         "reward" : "fragment_1",
-        "name" : "Énigme des Statues"
+        "roomId" : "statues"
       },
       {
-        "description" : "Répète ce que je dis et je meurs. Qui suis-je ?",
-        "id" : "puzzle2",
         "isSolved" : true,
-        "roomId" : "echo",
         "solution" : "écho",
+        "description" : "Répète ce que je dis et je meurs. Qui suis-je ?",
         "startTime" : 0,
+        "id" : "puzzle2",
+        "name" : "Énigme de l'Écho",
         "timeLimit" : 2,
         "reward" : "fragment_2",
-        "name" : "Énigme de l'Écho"
+        "roomId" : "echo"
       }
     ],
-    "inventory" : [
-      "torche",
-      "fragment_carte",
-      "amulette",
-      "livre"
-    ],
     "score" : 420,
-    "receivedHints" : [
-      "Prends la torche, utilise-la pour révéler l’énigme, et résous-la pour obtenir la clé.",
-      "Les objets du donjon sont la clé pour ouvrir les chemins. Cherche une torche, une clé, et une carte.",
-      "Chaque objet a un rôle. La clé ouvre un chemin crucial.",
-      "Prends le fragment de carte et utilise-le pour révéler un chemin caché.",
-      "Ce qui est plus léger que l’air n’a pas de substance physique.",
-      "Prends le livre dans la bibliothèque, utilise-le pour révéler l’énigme, et résous-la pour avancer.",
-      "Utilise l’amulette pour vaincre le golem et obtenir le dernier fragment.",
-      "Utilise l’Œil d’Argath pour ouvrir la sortie, puis choisis : garder ou détruire."
-    ],
-    "playerPosition" : "sortie",
     "visitedRooms" : [
       "echo",
       "cavernes",
@@ -66,7 +49,19 @@
       "sanctuaire",
       "statues"
     ],
-    "playerName" : "Filia",
+    "completedChapters" : [
+      "chap1",
+      "chap2",
+      "chap3",
+      "chap4",
+      "chap5",
+      "chap6",
+      "chap7",
+      "chap8",
+      "chap9"
+    ],
+    "gameTime" : 2,
+    "playerPosition" : "sortie",
     "collectedItems" : [
       "torche",
       "cle",
@@ -85,85 +80,90 @@
       "puzzle1",
       "puzzle2"
     ],
-    "playerId" : "39F70F9F-F3F4-43F3-8970-158EC911EF15",
-    "completedChapters" : [
-      "chap1",
-      "chap2",
-      "chap3",
-      "chap4",
-      "chap5",
-      "chap6",
-      "chap7",
-      "chap8",
-      "chap9"
+    "receivedHints" : [
+      "Prends la torche, utilise-la pour révéler l’énigme, et résous-la pour obtenir la clé.",
+      "Les objets du donjon sont la clé pour ouvrir les chemins. Cherche une torche, une clé, et une carte.",
+      "Chaque objet a un rôle. La clé ouvre un chemin crucial.",
+      "Prends le fragment de carte et utilise-le pour révéler un chemin caché.",
+      "Ce qui est plus léger que l’air n’a pas de substance physique.",
+      "Prends le livre dans la bibliothèque, utilise-le pour révéler l’énigme, et résous-la pour avancer.",
+      "Utilise l’amulette pour vaincre le golem et obtenir le dernier fragment.",
+      "Utilise l’Œil d’Argath pour ouvrir la sortie, puis choisis : garder ou détruire."
     ],
-    "gameTime" : 2
+    "playerName" : "Filia",
+    "playerId" : "39F70F9F-F3F4-43F3-8970-158EC911EF15",
+    "inventory" : [
+      "torche",
+      "fragment_carte",
+      "amulette",
+      "livre"
+    ]
   },
   {
     "puzzleStates" : [
       {
-        "solution" : "souffle",
-        "name" : "Énigme des Statues",
-        "id" : "puzzle1",
-        "isSolved" : false,
-        "reward" : "fragment_1",
-        "roomId" : "statues",
-        "description" : "Je suis plus léger que l'air, mais impossible à attraper. Que suis-je ?"
-      },
-      {
-        "solution" : "livre",
-        "name" : "Énigme de la Bibliothèque",
-        "id" : "puzzle3",
-        "isSolved" : false,
-        "reward" : "connaissance",
-        "roomId" : "bibliotheque",
-        "description" : "Je contiens tout le savoir, mais je reste muet. Que suis-je ?"
-      },
-      {
-        "solution" : "écho",
-        "name" : "Énigme de l'Écho",
-        "id" : "puzzle2",
-        "isSolved" : false,
-        "timeLimit" : 2,
-        "reward" : "fragment_2",
-        "roomId" : "echo",
-        "description" : "Répète ce que je dis et je meurs. Qui suis-je ?"
-      },
-      {
-        "solution" : "lumière",
-        "name" : "Énigme de la Torche",
         "id" : "puzzle4",
-        "isSolved" : false,
         "reward" : "cle",
-        "roomId" : "entree",
-        "description" : "Je chasse l’ombre, mais je ne vis que par le feu. Que suis-je ?"
+        "name" : "Énigme de la Torche",
+        "description" : "Je chasse l’ombre, mais je ne vis que par le feu. Que suis-je ?",
+        "isSolved" : false,
+        "solution" : "lumière",
+        "roomId" : "entree"
+      },
+      {
+        "id" : "puzzle3",
+        "reward" : "connaissance",
+        "name" : "Énigme de la Bibliothèque",
+        "description" : "Je contiens tout le savoir, mais je reste muet. Que suis-je ?",
+        "isSolved" : false,
+        "solution" : "livre",
+        "roomId" : "bibliotheque"
+      },
+      {
+        "id" : "puzzle1",
+        "reward" : "fragment_1",
+        "name" : "Énigme des Statues",
+        "description" : "Je suis plus léger que l'air, mais impossible à attraper. Que suis-je ?",
+        "isSolved" : false,
+        "solution" : "souffle",
+        "roomId" : "statues"
+      },
+      {
+        "id" : "puzzle2",
+        "reward" : "fragment_2",
+        "name" : "Énigme de l'Écho",
+        "description" : "Répète ce que je dis et je meurs. Qui suis-je ?",
+        "isSolved" : false,
+        "solution" : "écho",
+        "roomId" : "echo",
+        "timeLimit" : 2
       }
     ],
-    "inventory" : [
-
-    ],
     "score" : 0,
-    "receivedHints" : [
-
-    ],
-    "playerPosition" : "entree",
     "visitedRooms" : [
       "entree"
     ],
-    "playerName" : "Nola",
+    "completedChapters" : [
+
+    ],
+    "gameTime" : 0,
+    "playerPosition" : "entree",
     "collectedItems" : [
 
     ],
     "solvedPuzzles" : [
-      "puzzle1",
+      "puzzle4",
       "puzzle3",
-      "puzzle2",
-      "puzzle4"
+      "puzzle1",
+      "puzzle2"
     ],
-    "playerId" : "6C1E0D85-0DBA-410E-95BC-19E48FC73156",
-    "completedChapters" : [
+    "receivedHints" : [
 
     ],
-    "gameTime" : 0
+    "playerName" : "Nola",
+    "playerId" : "6C1E0D85-0DBA-410E-95BC-19E48FC73156",
+    "inventory" : [
+
+    ]
   }
 ]
