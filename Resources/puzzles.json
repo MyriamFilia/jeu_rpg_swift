@@ -1,56 +1,46 @@
 {
-    "puzzle1": {
-      "id": "puzzle1",
-      "name": "Énigme des Statues",
-      "description": "Je suis plus léger que l'air, mais impossible à attraper. Que suis-je ?",
-      "solution": "ombre",
-      "isSolved": false,
-      "reward": "cle",
-      "roomId": "statues"
-    },
-    "puzzle2": {
-      "id": "puzzle2",
-      "name": "Énigme de l'Écho",
-      "description": "Répète ce que je dis et je meurs. Qui suis-je ?",
-      "solution": "silence",
-      "isSolved": false,
-      "reward": "amulette",
-      "roomId": "echo"
-    },
-    "puzzle3": {
-      "id": "puzzle3",
-      "name": "Énigme de la Bibliothèque",
-      "description": "Je suis plein de mots, mais je ne parle pas. Que suis-je ?",
-      "solution": "livre",
-      "isSolved": false,
-      "reward": "artefact",
-      "roomId": "bibliotheque"
-    },
-    "puzzle4": {
-      "id": "puzzle4",
-      "name": "Énigme du Sanctuaire",
-      "description": "Je suis une ombre, mais je ne fais pas de bruit. Que suis-je ?",
-      "solution": "ombre",
-      "isSolved": false,
-      "reward": "artefact",
-      "roomId": "sanctuaire"
-    },
-    "puzzle5": {
-      "id": "puzzle5",
-      "name": "Énigme des Caverne",
-      "description": "Je suis invisible, mais je peux être entendu. Que suis-je ?",
-      "solution": "silence",
-      "isSolved": false,
-      "reward": "fragment_carte",
-      "roomId": "cavernes"
-    },
-    "puzzle6": {
-      "id": "puzzle6",
-      "name": "Énigme de la Torche",
-      "description": "Je suis chaud, mais je ne brûle pas. Que suis-je ?",
-      "solution": "torche",
-      "isSolved": false,
-      "reward": "cle",
-      "roomId": "torche"
-    }
+  "puzzle1": {
+    "id": "puzzle1",
+    "name": "Énigme des Statues",
+    "description": "Je suis plus léger que l'air, mais impossible à attraper. Que suis-je ?",
+    "solution": "souffle",
+    "isSolved": false,
+    "reward": "fragment_1",
+    "roomId": "statues",
+    "timeLimit": null,
+    "startTime": null
+  },
+  "puzzle2": {
+    "id": "puzzle2",
+    "name": "Énigme de l'Écho",
+    "description": "Répète ce que je dis et je meurs. Qui suis-je ?",
+    "solution": "écho",
+    "isSolved": false,
+    "reward": "fragment_2",
+    "roomId": "echo",
+    "timeLimit": 2,
+    "startTime": null
+  },
+  "puzzle3": {
+    "id": "puzzle3",
+    "name": "Énigme de la Bibliothèque",
+    "description": "Je contiens tout le savoir, mais je reste muet. Que suis-je ?",
+    "solution": "livre",
+    "isSolved": false,
+    "reward": "connaissance",
+    "roomId": "bibliotheque",
+    "timeLimit": null,
+    "startTime": null
+  },
+  "puzzle4": {
+    "id": "puzzle4",
+    "name": "Énigme de la Torche",
+    "description": "Je chasse l’ombre, mais je ne vis que par le feu. Que suis-je ?",
+    "solution": "lumière",
+    "isSolved": false,
+    "reward": "cle",
+    "roomId": "entree",
+    "timeLimit": null,
+    "startTime": null
   }
+}

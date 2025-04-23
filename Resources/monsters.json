@@ -2,18 +2,11 @@
     "golem": {
       "id": "golem",
       "name": "Golem de pierre",
-      "description": "Un ancien gardien du sanctuaire.",
-      "attackPower": 15,
-      "defense": 10,
-      "health": 50
+      "description": "Un ancien gardien du sanctuaire."
     },
-
     "spectre": {
       "id": "spectre",
       "name": "Spectre de la bibliothèque",
-      "description": "Une âme tourmentée cherchant à se venger.",
-      "attackPower": 10,
-      "defense": 5,
-      "health": 30
+      "description": "Une âme tourmentée cherchant à se venger."
     }
   }

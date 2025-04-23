@@ -2,118 +2,111 @@
   "entree": {
     "id": "entree",
     "name": "Entrée du Donjon",
-    "description": "Une vieille porte grince dans le vent. Une torche est accrochée au mur.",
+    "description": "Une vieille porte grince dans le vent. Une torche poussiéreuse est accrochée au mur, et des symboles gravés scintillent faiblement.",
     "direction": {
-      "nord": "statues"
+      "est": "verrouillee"
     },
-    "items": [
-      "torche"
-    ],
-    "puzzles": "puzzle6",
+    "items": ["torche"],
+    "puzzles": "puzzle4",
     "monsters": [],
-    "characters": [],
-    "isLocked": false
-  },
-  "statues": {
-    "id": "statues",
-    "name": "Salle des Statues",
-    "description": "Des statues de pierre vous observent. Un murmure mystérieux résonne.",
-    "direction": {
-      "sud": "entree",
-      "nord": "verrouillee"
-    },
-    "items": [],
-    "puzzles": "puzzle1",
-    "monsters": [],
-    "characters": [],
+    "characters": ["ermite"],
     "isLocked": false
   },
   "verrouillee": {
     "id": "verrouillee",
     "name": "Salle Verrouillée",
-    "description": "Une salle sombre avec une trappe au sol. Une clé semble nécessaire pour entrer.",
+    "description": "Une porte massive bloque l’accès à une salle secrète. Une clé magique est nécessaire pour entrer.",
     "direction": {
-      "sud": "statues",
-      "bas": "cavernes"
+      "ouest": "entree",
+      "sud": "cavernes"
     },
     "items": [],
     "puzzles": null,
     "monsters": [],
-    "characters": [],
+    "characters": ["gardien"],
     "isLocked": true
   },
   "cavernes": {
     "id": "cavernes",
     "name": "Cavernes Obscures",
-    "description": "Un labyrinthe souterrain plongé dans le noir.",
+    "description": "Un labyrinthe souterrain plongé dans l’obscurité. Un fragment de carte gît dans un coin, couvert de runes.",
     "direction": {
-      "ouest": "echo"
+      "nord": "verrouillee",
+      "est": "echo"
     },
-    "items": [
-      "fragment_carte"
-    ],
-    "puzzles": "puzzle5",
+    "items": ["fragment_carte"],
+    "puzzles": null,
     "monsters": [],
-    "characters": [],
+    "characters": ["cartographe"],
     "isLocked": false
   },
   "echo": {
     "id": "echo",
     "name": "Salle de l’Écho",
-    "description": "Un son étrange résonne. Tu sens qu’un piège sonore t’attend.",
+    "description": "Un son étrange résonne dans cette salle. Une amulette brille faiblement après la résolution d’une énigme sonore.",
     "direction": {
-      "est": "cavernes",
+      "ouest": "cavernes",
+      "nord": "statues"
+    },
+    "items": ["amulette"],
+    "puzzles": "puzzle2",
+    "monsters": [],
+    "characters": ["echo"],
+    "isLocked": false
+  },
+  "statues": {
+    "id": "statues",
+    "name": "Salle des Statues",
+    "description": "Des statues de pierre imposantes vous observent. Un coffre scellé par une énigme murmure des secrets anciens.",
+    "direction": {
+      "sud": "echo",
       "nord": "bibliotheque"
     },
     "items": [],
-    "puzzles": "puzzle2",
+    "puzzles": "puzzle1",
     "monsters": [],
-    "characters": [],
+    "characters": ["scribe"],
     "isLocked": false
   },
   "bibliotheque": {
     "id": "bibliotheque",
     "name": "Bibliothèque Oubliée",
-    "description": "Des rayonnages effondrés, des livres anciens, et une présence spectrale.",
+    "description": "Des rayonnages effondrés et des livres anciens entourent un pupitre gravé d’une énigme mystérieuse.",
     "direction": {
-      "sud": "echo",
+      "sud": "statues",
       "nord": "sanctuaire"
     },
-    "items": [],
+    "items": ["livre"],
     "puzzles": "puzzle3",
     "monsters": [],
-    "characters": [],
+    "characters": ["bibliothecaire"],
     "isLocked": false
   },
   "sanctuaire": {
     "id": "sanctuaire",
     "name": "Sanctuaire Brisé",
-    "description": "Un autel en ruine et un golem de pierre figé.",
+    "description": "Un autel en ruine est gardé par un golem de pierre. Une aura sacrée emplit l’air.",
     "direction": {
       "sud": "bibliotheque",
       "nord": "sortie"
     },
-    "items": [
-      "artefact"
-    ],
-    "puzzles": "puzzle4",
-    "monsters": [
-      "golem"
-    ],
-    "characters": [],
+    "items": [],
+    "puzzles": null,
+    "monsters": ["golem"],
+    "characters": ["pretre"],
     "isLocked": false
   },
   "sortie": {
     "id": "sortie",
     "name": "Sortie Scellée",
-    "description": "Une porte magique bloquée. Il faut l’artefact pour sortir.",
+    "description": "Une porte runique massive bloque la sortie. L’Œil d’Argath reconstitué est nécessaire pour l’ouvrir.",
     "direction": {
       "sud": "sanctuaire"
     },
     "items": [],
     "puzzles": null,
     "monsters": [],
-    "characters": [],
+    "characters": ["oracle"],
     "isLocked": true
   }
 }

@@ -1,3 +1,124 @@
 {
-    
-}
+    "ermite": {
+      "id": "ermite",
+      "name": "Vieil Ermite",
+      "dialogue": "Je suis l’Ermite, gardien des secrets de ce donjon. Parle-moi pour des indices sur ton chemin.",
+      "hints": {
+        "puzzle": {
+          "puzzle4": "Ce qui chasse l’ombre naît du feu mais n’est pas le feu lui-même."
+        },
+        "chapter": {
+          "chap1": "Prends la torche, utilise-la pour révéler l’énigme, et résous-la pour obtenir la clé."
+        },
+        "mission": {
+          "mission1": "Les objets du donjon sont la clé pour ouvrir les chemins. Cherche une torche, une clé, et une carte."
+        }
+      }
+    },
+    "scribe": {
+      "id": "scribe",
+      "name": "Scribe Mystique",
+      "dialogue": "Les statues murmurent des vérités cachées. Demande-moi un indice pour avancer.",
+      "hints": {
+        "puzzle": {
+          "puzzle1": "Ce qui est plus léger que l’air n’a pas de substance physique."
+        },
+        "chapter": {
+          "chap4": "Résous l’énigme des statues pour obtenir le premier fragment."
+        },
+        "mission": {
+          "mission2": "Les fragments de l’Œil d’Argath sont protégés par des énigmes. Trouve-les tous."
+        }
+      }
+    },
+    "gardien": {
+      "id": "gardien",
+      "name": "Gardien Silencieux",
+      "dialogue": "Cette salle est scellée. Je peux te guider pour l’ouvrir si tu me parles.",
+      "hints": {
+        "puzzle": {},
+        "chapter": {
+          "chap2": "Utilise la clé pour déverrouiller la porte et accéder à la salle verrouillée."
+        },
+        "mission": {
+          "mission1": "Chaque objet a un rôle. La clé ouvre un chemin crucial."
+        }
+      }
+    },
+    "cartographe": {
+      "id": "cartographe",
+      "name": "Cartographe Égaré",
+      "dialogue": "Perdu dans ces cavernes, mais mes cartes peuvent t’aider. Demande-moi un indice !",
+      "hints": {
+        "puzzle": {},
+        "chapter": {
+          "chap3": "Prends le fragment de carte et utilise-le pour révéler un chemin caché."
+        },
+        "mission": {
+          "mission1": "Les cavernes cachent des secrets. Un fragment de carte te guidera."
+        }
+      }
+    },
+    "echo": {
+      "id": "echo",
+      "name": "Écho Vivant",
+      "dialogue": "Mes mots résonnent comme la salle. Parle-moi pour percer le mystère sonore.",
+      "hints": {
+        "puzzle": {
+          "puzzle2": "Ce qui disparaît quand on le répète est lié au son."
+        },
+        "chapter": {
+          "chap5": "Résous l’énigme pour obtenir le deuxième fragment, puis prends l’amulette."
+        },
+        "mission": {
+          "mission2": "L’amulette est essentielle pour affronter le gardien du dernier fragment."
+        }
+      }
+    },
+    "bibliothecaire": {
+      "id": "bibliothecaire",
+      "name": "Bibliothécaire Fantomatique",
+      "dialogue": "Les livres renferment la vérité. Parle-moi pour éclaircir les mystères de l’Œil d’Argath.",
+      "availableTime": 2,
+      "hints": {
+        "puzzle": {
+          "puzzle3": "Ce qui contient tout le savoir reste muet sans un lecteur."
+        },
+        "chapter": {
+          "chap6": "Prends le livre dans la bibliothèque, utilise-le pour révéler l’énigme, et résous-la pour avancer."
+        },
+        "mission": {
+          "mission2": "Le livre contient la clé pour reformer l’Œil d’Argath. Trouve-le et utilise-le."
+        }
+      }
+    },
+    "pretre": {
+      "id": "pretre",
+      "name": "Prêtre Ancien",
+      "dialogue": "Le sanctuaire protège un fragment sacré. Demande mon aide pour triompher.",
+      "hints": {
+        "puzzle": {},
+        "chapter": {
+          "chap7": "Utilise l’amulette pour vaincre le golem et obtenir le dernier fragment."
+        },
+        "mission": {
+          "mission2": "Le golem est la dernière épreuve avant de reformer l’Œil."
+        }
+      }
+    },
+    "oracle": {
+      "id": "oracle",
+      "name": "Oracle d’Argath",
+      "dialogue": "La sortie est proche, mais l’artefact est la clé. Parle-moi pour achever ta quête.",
+      "hints": {
+        "puzzle": {},
+        "chapter": {
+          "chap8": "Combine les trois fragments et le livre pour reformer l’Œil d’Argath.",
+          "chap9": "Utilise l’Œil d’Argath pour ouvrir la sortie, puis choisis : garder ou détruire."
+        },
+        "mission": {
+          "mission3": "Ton choix final déterminera le sort du monde. Réfléchis bien."
+        }
+      }
+    }
+  }

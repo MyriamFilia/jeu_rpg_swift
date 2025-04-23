@@ -1,84 +1,84 @@
 [
   {
     "id": "mission1",
-    "title": "Les Sceaux Oubliés",
-    "description": "Briser les anciens sceaux magiques qui protègent les secrets d’Argath.",
+    "title": "Les Clés du Donjon",
+    "description": "Trouver les objets nécessaires pour ouvrir les chemins du donjon et accéder aux fragments de l’Œil d’Argath.",
     "chapters": [
       {
         "id": "chap1",
-        "title": "La Crypte Silencieuse",
-        "description": "Une ancienne crypte renfermant le premier sceau. Les morts eux-mêmes semblent veiller sur ce lieu.",
-        "roomId": "statues",
+        "title": "Lueur dans l’Obscurité",
+        "description": "Dans l’Entrée du Donjon, demandez de l'aide à l'ermite pour savoir quoi faire.",
+        "roomId": "entree",
         "isCompleted": false
       },
       {
         "id": "chap2",
-        "title": "Les Murmures de l’Est",
-        "description": "Un couloir oublié d’où émanent des voix étranges. Un autre sceau y est caché.",
-        "roomId": "echo",
+        "title": "La Porte Verrouillée",
+        "description": "Utilisez la clé pour déverrouiller la Salle Verrouillée et révéler ses secrets.",
+        "roomId": "verrouillee",
+        "isCompleted": false
+      },
+      {
+        "id": "chap3",
+        "title": "Le Chemin Caché",
+        "description": "Dans les Cavernes Obscures, prenez la carte et utilisez-la pour révéler un chemin.",
+        "roomId": "cavernes",
         "isCompleted": false
       }
     ]
   },
   {
     "id": "mission2",
-    "title": "L’Ombre de Karzhan",
-    "description": "Traquer l’ombre d’un ancien magicien maléfique qui hante toujours le donjon.",
+    "title": "Les Fragments de l’Œil",
+    "description": "Rassembler les trois fragments de l’Œil d’Argath, cachés derrière des énigmes et un gardien.",
     "chapters": [
       {
-        "id": "chap3",
-        "title": "Le Puits Maudit",
-        "description": "Un puits noirci par la magie noire. Une énigme y attend une réponse… ou une âme.",
-        "roomId": "cavernes",
+        "id": "chap4",
+        "title": "Le Premier Fragment",
+        "description": "Dans la Salle des Statues, résolvez l’énigme pour obtenir le premier fragment.",
+        "roomId": "statues",
         "isCompleted": false
       },
       {
-        "id": "chap4",
-        "title": "Le Jardin du Néant",
-        "description": "Un jardin étrange où rien ne pousse, sauf le mal. La trace de Karzhan y persiste.",
+        "id": "chap5",
+        "title": "Le Deuxième Fragment",
+        "description": "Dans la Salle de l’Écho, résolvez l’énigme pour obtenir le deuxième fragment, puis prenez l’amulette.",
+        "roomId": "echo",
+        "isCompleted": false
+      },
+      {
+        "id": "chap6",
+        "title": "Le Savoir Ancien",
+        "description": "Dans la Bibliothèque Oubliée, vous devez parler au bibliothécaire pour savoir comment avancer.",
         "roomId": "bibliotheque",
+        "isCompleted": false
+      },
+      {
+        "id": "chap7",
+        "title": "Le Gardien du Fragment",
+        "description": "Dans le Sanctuaire Brisé, utilisez l’amulette pour vaincre le golem et obtenir le dernier fragment.",
+        "roomId": "sanctuaire",
         "isCompleted": false
       }
     ]
   },
   {
     "id": "mission3",
-    "title": "Le Cœur Fracturé",
-    "description": "Retrouver les fragments perdus d’un artefact ancien, source d’un grand pouvoir.",
+    "title": "L’Œil Reconstitué",
+    "description": "Reformer l’Œil d’Argath, ouvrir la sortie, et choisir votre destin.",
     "chapters": [
-      {
-        "id": "chap5",
-        "title": "Les Archives Perdues",
-        "description": "Un savoir oublié dans des rayons poussiéreux. Un fragment pourrait y être dissimulé.",
-        "roomId": "sanctuaire",
-        "isCompleted": false
-      },
-      {
-        "id": "chap6",
-        "title": "La Forge du Désespoir",
-        "description": "Une forge abandonnée où l'on entend encore les échos des artisans déchus.",
-        "roomId": "sortie",
-        "isCompleted": false
-      }
-    ]
-  },
-  {
-    "id": "mission4",
-    "title": "L’Ultime Jugement",
-    "description": "Décider du destin du monde à travers le combat final et une décision cruciale.",
-    "chapters": [
-      {
-        "id": "chap7",
-        "title": "La Chambre des Larmes",
-        "description": "Le passé et les regrets s’y entremêlent. L’avant-dernier obstacle du destin.",
-        "roomId": "verrouillee",
-        "isCompleted": false
-      },
       {
         "id": "chap8",
-        "title": "Le Sanctuaire d’Argath",
-        "description": "L’ultime salle. Le monstre attend. L’artefact doit être complété. Une décision finale doit être prise.",
+        "title": "Reformer l’Œil",
+        "description": "Dans le Sanctuaire Brisé, combinez les fragments et le livre pour reformer l’Œil d’Argath.",
         "roomId": "sanctuaire",
+        "isCompleted": false
+      },
+      {
+        "id": "chap9",
+        "title": "La Porte Finale",
+        "description": "À la Sortie Scellée, utilisez l’Œil d’Argath et choisissez de le garder ou de le détruire.",
+        "roomId": "sortie",
         "isCompleted": false
       }
     ]

@@ -1,16 +1,17 @@
 import Foundation
 
 class GameSession {
-    var gameManager: GameManager
-    var commandHandler: CommandHandler
+    let gameManager: GameManager
+    let commandHandler: CommandHandler
     var activePlayerId: String?
 
     init(gameManager: GameManager) {
         self.gameManager = gameManager
-        self.commandHandler = CommandHandler(gameManager: gameManager, playerId: nil)
+        self.commandHandler = CommandHandler(gameManager: gameManager) // Supprimé playerId
     }
 
     func start() {
+        gameManager.loadGameData() // Charger les données JSON
         afficherMenuPrincipal()
 
         var choixValide = false
@@ -21,12 +22,11 @@ class GameSession {
                 case "1":
                     if let playerId = gameManager.startNewGame() {
                         activePlayerId = playerId
-                        commandHandler.playerId = playerId
+                        commandHandler.setPlayerId(playerId) // Utiliser setPlayerId
+                        boucleDeJeu()
+                        choixValide = true
                     }
-                    boucleDeJeu()
-                    choixValide = true
                 case "2":
-                    // Réinitialiser l'état pour lister les sauvegardes proprement
                     gameManager.resetGameState()
                     let url = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("Resources/save.json")
                     var gameSaves: [GameSave] = []
@@ -49,7 +49,7 @@ class GameSession {
 
                     if gameSaves.isEmpty {
                         print("Aucune sauvegarde disponible. Veuillez commencer une nouvelle partie.")
-                        continue // Revenir au menu principal
+                        continue
                     }
 
                     print("Joueurs disponibles :")
@@ -63,7 +63,7 @@ class GameSession {
                         let selectedPlayerId = gameSaves[index - 1].playerId
                         if let loadedPlayerId = gameManager.loadGameSaveData(playerId: selectedPlayerId) {
                             activePlayerId = loadedPlayerId
-                            commandHandler.playerId = activePlayerId
+                            commandHandler.setPlayerId(loadedPlayerId) // Utiliser setPlayerId
                             boucleDeJeu()
                             choixValide = true
                         } else {
@@ -98,8 +98,19 @@ class GameSession {
         while true {
             print("\nQue voulez-vous faire ?")
             if let userInput = readLine()?.lowercased() {
-                commandHandler.handleCommand(userInput)
-                afficherEtatJoueur()
+                if userInput == "menu"  {
+                    if let playerId = activePlayerId {
+                        gameManager.returnToMenu(playerId: playerId)
+                        activePlayerId = nil // Réinitialiser l'ID du joueur actif
+                        start() // Relancer le menu principal
+                        break // Sortir de la boucle de jeu
+                    } else {
+                        print("Erreur : Aucun joueur actif.")
+                    }
+                } else {
+                    commandHandler.handleCommand(userInput)
+                    //afficherEtatJoueur()
+                }
             }
         }
     }
@@ -109,11 +120,11 @@ class GameSession {
             print("Erreur : Aucun joueur actif.")
             return
         }
-        //print("\n--- État actuel du joueur ---")
-        //print("Position : \(gameManager.rooms[player.currentRoomId]?.name ?? "Inconnue")")
-        //print("Score : \(player.score)")
-        //print("Inventaire : \(player.inventory)")
-        //print("-----------------------------")
+        print("\n--- État actuel du joueur ---")
+        print("Position : \(gameManager.rooms[player.currentRoomId]?.name ?? "Inconnue")")
+        print("Score : \(player.score)")
+        print("Inventaire : \(player.inventory.isEmpty ? "Vide" : player.inventory.joined(separator: ", "))")
+        print("-----------------------------")
     }
 
     private func quitterJeu() {

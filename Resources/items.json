@@ -1,33 +1,52 @@
 {
-    "torche": {
-      "id": "torche",
-      "name": "Torche",
-      "description": "Utile pour voir dans le noir."
-    },
-    "cle": {
-      "id": "cle",
-      "name": "Clé en fer",
-      "description": "Permet d’ouvrir une salle verrouillée."
-    },
-    "fragment_carte": {
-      "id": "fragment_carte",
-      "name": "Fragment de carte",
-      "description": "Un morceau d’une ancienne carte du donjon."
-    },
-    "amulette": {
-      "id": "amulette",
-      "name": "Amulette protectrice",
-      "description": "Protège contre les créatures magiques."
-    },
-    "artefact": {
-      "id": "artefact",
-      "name": "Artefact d’Argath",
-      "description": "L’objet légendaire que vous êtes venu chercher."
-    },
-    "livre": {
-      "id": "livre",
-      "name": "Livre ancien",
-      "description": "Un livre poussiéreux rempli de secrets oubliés."
-    }
-
+  "torche": {
+    "id": "torche",
+    "name": "Torche",
+    "description": "Utile pour voir dans le noir et résoudre certaines énigmes."
+  },
+  "cle": {
+    "id": "cle",
+    "name": "Clé en fer",
+    "description": "Permet d’ouvrir une salle verrouillée."
+  },
+  "fragment_carte": {
+    "id": "fragment_carte",
+    "name": "Fragment de carte",
+    "description": "Un morceau d’une ancienne carte du donjon, utile pour naviguer."
+  },
+  "amulette": {
+    "id": "amulette",
+    "name": "Amulette protectrice",
+    "description": "Protège contre les créatures magiques comme le golem."
+  },
+  "livre": {
+    "id": "livre",
+    "name": "Livre ancien",
+    "description": "Un tome poussiéreux contenant des secrets pour reformer l’Œil d’Argath."
+  },
+  "connaissance": {
+    "id": "connaissance",
+    "name": "Connaissance oubliée",
+    "description": "La sagesse nécessaire pour reformer l’Œil d’Argath."
+  },
+  "fragment_1": {
+    "id": "fragment_1",
+    "name": "Premier Fragment de l’Œil",
+    "description": "Une pièce scintillante de l’Œil d’Argath."
+  },
+  "fragment_2": {
+    "id": "fragment_2",
+    "name": "Deuxième Fragment de l’Œil",
+    "description": "Une pièce vibrante de l’Œil d’Argath."
+  },
+  "fragment_3": {
+    "id": "fragment_3",
+    "name": "Troisième Fragment de l’Œil",
+    "description": "La dernière pièce de l’Œil d’Argath, protégée par un golem."
+  },
+  "artefact": {
+    "id": "artefact",
+    "name": "Œil d’Argath",
+    "description": "L’artefact légendaire reconstitué, capable de manipuler le temps."
   }
+}
